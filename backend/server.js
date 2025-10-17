@@ -14,6 +14,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Servir les fichiers statiques du frontend
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Chemins vers les fichiers de configuration
 const RULES_PATH = path.join(__dirname, 'config', 'rules.json');
 const HISTORY_PATH = path.join(__dirname, 'config', 'history.json');
@@ -82,6 +85,15 @@ async function callOdooAPI(model, method, args = [], kwargs = {}) {
     
     return await response.json();
 }
+
+// ============================================================================
+// ROUTES - FRONTEND
+// ============================================================================
+
+// Servir l'index.html sur la racine
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // ============================================================================
 // ROUTES - CONFIGURATION

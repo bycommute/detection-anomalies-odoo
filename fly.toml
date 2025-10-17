@@ -1,4 +1,4 @@
-app = "detection-anomalies-odoo"
+app = "bycommute-anomalies-detector"
 primary_region = "cdg"
 
 [build]

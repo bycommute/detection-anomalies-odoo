@@ -1,5 +1,5 @@
 // Configuration de l'API
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://bycommute-anomalies-detector.fly.dev';
 
 // État global
 const STATE = {

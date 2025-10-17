@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détecteur d'Anomalies Odoo - Configuration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🔍 Détecteur d'Anomalies Odoo</h1>
+            <p class="subtitle">Configuration simple et modulable</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="config">⚙️ Configuration</button>
+            <button class="tab" data-tab="analyze">🔎 Analyse</button>
+            <button class="tab" data-tab="history">📊 Historique</button>
+        </nav>
+
+        <!-- Tab: Configuration -->
+        <div class="tab-content active" id="config-tab">
+            <div class="info-box">
+                <p><strong>💡 Comment ça marche ?</strong></p>
+                <p>Configurez les règles de détection ci-dessous. Vous pouvez activer/désactiver chaque règle et modifier les paramètres. Les changements sont sauvegardés automatiquement.</p>
+            </div>
+
+            <div id="rules-container"></div>
+
+            <div class="actions">
+                <button class="btn btn-primary" id="save-config">💾 Sauvegarder la Configuration</button>
+                <button class="btn btn-secondary" id="reset-config">🔄 Réinitialiser</button>
+            </div>
+        </div>
+
+        <!-- Tab: Analyse -->
+        <div class="tab-content" id="analyze-tab">
+            <div class="info-box">
+                <p><strong>🚀 Lancer l'analyse</strong></p>
+                <p>Cliquez sur "Analyser" pour récupérer les données d'Odoo et détecter les anomalies selon vos règles configurées.</p>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary btn-large" id="start-analysis">🔎 Lancer l'Analyse</button>
+            </div>
+
+            <div id="analysis-progress" class="progress-section" style="display:none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill">0%</div>
+                </div>
+                <p id="progress-text">Initialisation...</p>
+            </div>
+
+            <div id="analysis-results" style="display:none;">
+                <h2>📋 Résultats de l'Analyse</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-projets">0</div>
+                        <div class="stat-label">Projets analysés</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-anomalies">0</div>
+                        <div class="stat-label">Anomalies détectées</div>
+                    </div>
+                </div>
+
+                <div id="anomalies-list"></div>
+
+                <div class="actions">
+                    <button class="btn btn-success" id="create-activities">📋 Créer les Activités Odoo</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Historique -->
+        <div class="tab-content" id="history-tab">
+            <div class="info-box">
+                <p><strong>📊 Historique</strong></p>
+                <p>Consultez l'historique des activités créées et les statistiques.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="hist-total">0</div>
+                    <div class="stat-label">Activités créées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="hist-errors">0</div>
+                    <div class="stat-label">Erreurs</div>
+                </div>
+            </div>
+
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

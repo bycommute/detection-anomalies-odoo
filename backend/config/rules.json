@@ -1,0 +1,75 @@
+{
+  "rules": {
+    "installation_manquante": {
+      "enabled": true,
+      "name": "Installation Manquante",
+      "description": "Détecte quand un abri sort bientôt d'atelier sans installation commandée",
+      "delai_jours": 21,
+      "delai_urgent_jours": 7,
+      "fabricants": [
+        "Camflex",
+        "Axinov",
+        "IGP Containers",
+        "CAPcontainer"
+      ],
+      "installateurs": [
+        "WEVEE",
+        "J43",
+        "Installateur",
+        "API 28"
+      ],
+      "mots_cles_abris": [
+        "abri",
+        "arceau",
+        "rack",
+        "vélo",
+        "velo",
+        "container"
+      ],
+      "mots_cles_installation": [
+        "installation",
+        "pose",
+        "forfait installation"
+      ]
+    },
+    "commande_non_passee": {
+      "enabled": true,
+      "name": "Commande Non Passée",
+      "description": "Détecte les commandes fournisseurs en brouillon alors que l'installation approche",
+      "delai_jours": 30,
+      "delai_urgent_jours": 14,
+      "exclusions": [
+        "Transport",
+        "ED TRANS",
+        "2LCM",
+        "Transport Allemand",
+        "Ludo",
+        "WEVEE",
+        "J43",
+        "Installateur",
+        "API 28"
+      ]
+    },
+    "commande_bloquee": {
+      "enabled": true,
+      "name": "Commande Bloquée (SAV)",
+      "description": "Détecte les projets dont toutes les dates sont passées mais encore en cours"
+    },
+    "pret_enlevement": {
+      "enabled": true,
+      "name": "Prêt à l'Enlèvement Trop Long",
+      "description": "Détecte les colis prêts chez le fournisseur depuis trop longtemps",
+      "delai_jours": 14
+    }
+  },
+  "odoo": {
+    "api_url": "https://pont-entre-make-et-ocoo-mcp.fly.dev/api/v1/execute",
+    "api_token": "5f46ebccfd265cdd841423bbfe52a504caf5dfb8",
+    "base_url": "https://bycommute.odoo.com",
+    "mathieu_raynaud_id": 6,
+    "quentin_candaele_id": 2,
+    "purchase_order_model_id": 623,
+    "activity_type_urgent_id": 28
+  }
+}
+
